@@ -1,9 +1,7 @@
 let agenda = [];
 
-// Contador para generar IDs automáticos
 let contadorId = 1;
 
-// Función para agregar un nuevo contacto a la lista
 function agregarContacto(nombre, numero, correo) {
   let nuevoContacto = {
     id: contadorId,
@@ -17,7 +15,6 @@ function agregarContacto(nombre, numero, correo) {
   console.log(`El contacto ${nombre} ha sido agregado exitosamente.`);
 }
 
-// Función para borrar un contacto de la lista por su ID
 function borrarContactoPorId(id) {
     let indice = -1;
     for (let i = 0; i <agenda.length; i++) {
@@ -35,7 +32,6 @@ function borrarContactoPorId(id) {
     console.log(`El id N° ${id} no encontrado en la lista.`);
   }}
 
-// Ejemplo de uso
 agregarContacto("Pedro Picapiedra", "560465406", "PedritoP@YabbaDabbaDoo.com");
 agregarContacto("Pablo Marmol");
 agregarContacto("Pebbel Picapiedra");
