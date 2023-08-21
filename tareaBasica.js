@@ -1,10 +1,48 @@
-let libreta = ['Luis Molina', 'Darwin Gutierrez','Pablo Marmol'];
+let agenda = [];
 
-function añadeContacto(newContact) {libreta.push(newContact);}
+let contadorId = 1;
 
-function borraContacto(posicion) {libreta.splice(posicion,1);}
+function agregarContacto(nombre, numero, correo, ciudad) {
+  let nuevoContacto = {
+    id: contadorId,
+    nombre: nombre,
+    numero: numero,
+    correo: correo,
+    ubicacion : {
+      ciudad: ciudad,
+      direccion: direccion,
+    }
+  };
+  
+  agenda.push(nuevoContacto);
+  contadorId++;
+  console.log(`El contacto ${nombre} ha sido agregado exitosamente.`);
+}
 
-añadeContacto('Nicolas Maduro');
-borraContacto(2);
+function borrarContactoPorId(id) {
+    let indice = -1;
+    for (let i = 0; i <agenda.length; i++) {
+    if (agenda[i].id === id) {
+    indice = i;
+    break;
+    }
+}
 
-for(i=0;libreta.length>i;i++){console.log(libreta[i]);}
+    if (indice !== -1) {
+        console.log(`El contacto ${agenda[indice].nombre} ha sido borrado exitosamente.`);
+        agenda.splice(indice, 1);
+    
+    } else {
+    console.log(`El id N° ${id} no encontrado en la lista.`);
+  }}
+
+agregarContacto("Pedro Picapiedra", "560465406", "PedritoP@YabbaDabbaDoo.com");
+agregarContacto("Pablo Marmol");
+agregarContacto("Pebbel Picapiedra");
+
+console.log("Lista antes de borrar:", agenda);
+
+borrarContactoPorId(1);
+borrarContactoPorId(5);
+
+console.log("Lista después de borrar:", agenda);
