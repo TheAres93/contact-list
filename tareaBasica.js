@@ -2,7 +2,7 @@ let agenda = [];
 
 let contadorId = 1;
 
-function agregarContacto(nombre, numero, correo, ciudad) {
+function agregarContacto(nombre, numero, correo, ciudad, direccion) {
   let nuevoContacto = {
     id: contadorId,
     nombre: nombre,
@@ -46,3 +46,33 @@ borrarContactoPorId(1);
 borrarContactoPorId(5);
 
 console.log("Lista después de borrar:", agenda);
+
+function actualizarContacto(idContacto, nuevoNombre, nuevoNumero, nuevoCorreo, nuevoCiudad, nuevoDireccion) {
+    for (let i = 0; i < agenda.length; i++) {
+        if (agenda[i].id !== idContacto) {
+            console.log(`El id N° ${idContacto} no encontrado en la lista.`);
+        }
+            if (agenda[i].id === idContacto) {
+                console.log(`El id N° ${idContacto} ha sido actualizado.`);
+            if (nuevoNombre !== '') {
+                agenda[i].nombre = nuevoNombre;
+            }
+            if (nuevoNumero !== '') {
+                agenda[i].numeroo = nuevoNumero;
+            }
+            if (nuevoCorreo !== '') {
+                agenda[i].correo = nuevoCorreo;
+            }
+            if (nuevoCiudad !== '') {
+                agenda[i].ubicacion.ciudad = nuevoCiudad;
+            }
+            if (nuevoDireccion !== '') {
+                agenda[i].ubicacion.direccion = nuevoDireccion;
+            }
+        }}}
+
+
+ 
+actualizarContacto(2, "pepito", 7, "kudhgfdkhfg@actuals.com");
+
+console.log(agenda);  
