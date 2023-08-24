@@ -71,8 +71,8 @@ function actualizarContacto(idContacto, nuevoNombre, nuevoNumero, nuevoCorreo, n
         agregarContacto("Pablo Marmol",560465406, "PedritoP@YabbaDabbaDoo.com","","");
         agregarContacto("Pebbel Picapiedra",560465406, "PedritoP@YabbaDabbaDoo.com","","");
         
-        //borrarContactoPorId(1);
-        //borrarContactoPorId(5);
+        borrarContactoPorId(1);
+        borrarContactoPorId(5);
  
         actualizarContacto(5, "", "", "kudhgfdkhfg@actuals.com","asdasf","sfgdfg");
         actualizarContacto(2, "asdasd", "", "kudhgfdkhfg@actuals.com","asdasf","sfgdfg");
